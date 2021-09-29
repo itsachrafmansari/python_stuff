@@ -1,18 +1,17 @@
 import random
 import string
 
-# You can change the username/password length from here :
-username_length = 10
-password_length = 20
-
 while True:
-    for t in range(8):
+    userLen = int(input("Username length : "))
+    passLen = int(input("Password length : "))
+    samples = int(input("Number of samples : "))
+    for sample in range(samples):
         # Randomness generator
         un = string.ascii_letters + string.digits
-        random_un = "".join(random.choice(string.ascii_letters) for i in range(10))
+        random_un = "".join(random.choice(string.ascii_letters) for i in range(userLen))
         pw = string.ascii_letters + string.hexdigits + string.punctuation
-        random_pw = "".join(random.choice(pw) for x in range(password_length))
+        random_pw = "".join(random.choice(pw) for x in range(passLen))
 
         # Print a random username and password
-        print("Username : {}  |  Password : {}\n{}".format(random_un, random_pw, "-" * 60))
-    input()  # Press ENTER to regenerate
+        print("\nUsername : {}  |  Password : {}".format(random_un, random_pw))
+    input("\nPress ENTER to regenerate\n\n")  # Press ENTER to regenerate
