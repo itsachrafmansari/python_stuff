@@ -36,11 +36,11 @@ for wlan_profile in wlan_profiles:
             pass_len = len(network_password)
 
 # Sort networks by their names
-networks.sort(key=lambda network: network[1])
+networks.sort(key=lambda network: network[0])
 
 # Display all the known networks
 if networks:
-    print(f"|  {'Names':<{name_len}}  |  {'Passwords':<{pass_len}}  |\n{'_'*(name_len+pass_len+11)}")
+    print(f"|  {'Names':<{name_len}}  |  {'Passwords':<{pass_len}}  |\n{'-'*(name_len+pass_len+11)}")
     for network in networks:
         print(f"|  {network[0]:<{name_len}}  |  {network[1]:<{pass_len}}  |")
 else:
